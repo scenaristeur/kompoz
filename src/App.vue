@@ -17,7 +17,11 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/adokompoz">AdoKompoz</RouterLink>
         <RouterLink to="/minikompoz">MiniKompoz</RouterLink>
         <RouterLink to="/about">A propos</RouterLink>
+        <br>
+        <br>
         <hr>
+        <hr>
+        <br>
         <RouterLink to="/dekompoz">Ressources</RouterLink> | <RouterLink to="/dekompoz">Temoignages</RouterLink>...
       </nav>
     </div>
