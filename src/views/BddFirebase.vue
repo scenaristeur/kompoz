@@ -89,7 +89,6 @@ export default {
 
     console.log("TEST VAR ", import.meta.env.VITE_FIREBASE_PROJECT_ID)
 
-    console.log("TEST VAR ", firebaseConfig)
 
 
     const app = initializeApp(firebaseConfig);
