@@ -6,6 +6,16 @@ This template should help get you started developing with Vue 3 in Vite.
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
+
+## Données 
+vos données sont stockées et sécurisées sur Firebase en Belgique
+
+## firebase auth
+https://firebase.google.com/docs/auth/where-to-start?authuser=0&hl=fr
+https://firebase.google.com/docs/auth/web/firebaseui?authuser=0&hl=fr
+https://github.com/firebase/firebaseui-web
+
+
 ## Customize configuration
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).

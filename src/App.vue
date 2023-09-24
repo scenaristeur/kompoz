@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import BddFirebase from './views/BddFirebase.vue'
 </script>
 
 <template>
@@ -18,7 +19,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/adokompoz">AdoKompoz</RouterLink>
         <RouterLink to="/minikompoz">MiniKompoz</RouterLink>
         <br>
-<br>
+        <br>
         <hr>
         <br>
         <RouterLink to="/ressources">Ressources</RouterLink>
@@ -37,9 +38,11 @@ import HelloWorld from './components/HelloWorld.vue'
 
         <!-- <h3>Inscription</h3> -->
         <!-- <p>Téléchargez l'application Kompoz dès aujourd'hui et commencez votre nouveau départ.</p> -->
-        <button><RouterLink to="/login">Connexion</RouterLink></button>
+        <button>
+          <RouterLink to="/login">Connexion</RouterLink>
+        </button>
 
-
+        <BddFirebase />
 
 
       </nav>
