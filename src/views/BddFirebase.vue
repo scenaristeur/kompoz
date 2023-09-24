@@ -118,9 +118,9 @@ export default {
     //https://firebase.google.com/docs/auth/web/google-signin?authuser=0&hl=fr
     this.provider = new GoogleAuthProvider();
     this.provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-    this.provider.setCustomParameters({
-      'login_hint': 'user@example.com'
-    });
+    // this.provider.setCustomParameters({
+    //   'login_hint': 'user@example.com'
+    // });
 
 
 
@@ -213,7 +213,7 @@ export default {
           const errorCode = error.code;
           const errorMessage = error.message;
           // The email of the user's account used.
-          const email = error.customData.email;
+         // const email = error.customData.email;
           // The AuthCredential type that was used.
           const credential = GoogleAuthProvider.credentialFromError(error);
           this.user = null
