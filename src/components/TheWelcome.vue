@@ -8,6 +8,31 @@ import SupportIcon from './icons/IconSupport.vue'
 </script>
 
 <template>
+
+  <WelcomeItem>
+    <template #icon>
+      <DocumentationIcon />
+    </template>
+    <template #heading>A propos</template>
+
+    Vue’s
+    <a href="https://vuejs.org/" target="_blank" rel="noopener">official documentation</a>
+    provides you with all information you need to get started.
+  </WelcomeItem>
+
+
+
+  <WelcomeItem>
+    <template #icon>
+      <DocumentationIcon />
+    </template>
+    <template #heading>FAQ</template>
+
+    Vue’s
+    <a href="https://vuejs.org/" target="_blank" rel="noopener">official documentation</a>
+    provides you with all information you need to get started.
+  </WelcomeItem>
+
   <WelcomeItem>
     <template #icon>
       <DocumentationIcon />

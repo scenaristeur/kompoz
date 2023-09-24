@@ -5,24 +5,43 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <img alt="Vue logo" class="logo" src="@/assets/kompoz-logo.png" width="125" height="125" />
 
     <div class="wrapper">
       <HelloWorld msg="Kompoz" />
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/">Accueil</RouterLink>
+        <RouterLink to="/kompoz">Kompoz</RouterLink>
         <RouterLink to="/dekompoz">DeKompoz</RouterLink>
         <RouterLink to="/rekompoz">ReKompoz</RouterLink>
         <RouterLink to="/adokompoz">AdoKompoz</RouterLink>
         <RouterLink to="/minikompoz">MiniKompoz</RouterLink>
+        <br>
+<br>
+        <hr>
+        <br>
+        <RouterLink to="/ressources">Ressources</RouterLink>
+        <RouterLink to="/temoignages">Temoignages</RouterLink>
+        <RouterLink to="/forum">Forum</RouterLink>
+        <RouterLink to="/newsletter">Recevoir les informations</RouterLink>
         <RouterLink to="/about">A propos</RouterLink>
-        <br>
-        <br>
-        <hr>
+        <br><br>
         <hr>
         <br>
-        <RouterLink to="/dekompoz">Ressources</RouterLink> | <RouterLink to="/dekompoz">Temoignages</RouterLink>...
+
+
+        <!-- <h3>Telécharger Kompoz Mobile</h3> -->
+        <!-- <p>Téléchargez l'application Kompoz dès aujourd'hui et commencez votre nouveau départ.</p> -->
+        <button><a href="lien_de_telechargement">Télécharger Kompoz</a></button>
+
+        <!-- <h3>Inscription</h3> -->
+        <!-- <p>Téléchargez l'application Kompoz dès aujourd'hui et commencez votre nouveau départ.</p> -->
+        <button><RouterLink to="/login">Connexion</RouterLink></button>
+
+
+
+
       </nav>
     </div>
   </header>
