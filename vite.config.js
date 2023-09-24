@@ -1,5 +1,5 @@
 import { fileURLToPath, URL } from 'node:url'
-const publicPath = process.env.NODE_ENV === 'production' ? '/kompoz/' : '/'
+const base = process.env.NODE_ENV === 'production' ? '/kompoz/' : '/'
 
 
 import { defineConfig } from 'vite'
@@ -7,7 +7,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  publicPath: publicPath,
+  base: base,
   pwa: {
     name: 'Kompoz',
     // themeColor: '#4dbab5',
@@ -16,7 +16,7 @@ export default defineConfig({
     appleMobileWebAppStatusBarStyle: 'black',
     manifestOptions: {
       share_target: {
-        action: publicPath+'share',
+        action: base+'share',
         method: "GET",
         enctype: "application/x-www-form-urlencoded",
         params: {
