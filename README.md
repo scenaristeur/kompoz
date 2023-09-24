@@ -3,6 +3,8 @@
 - [ X ] pages principales
 - [ X ] login : email/password & google
 - [   ] ajouter les membres de sa famille à son profil (son cercle holacratie)
+- [  ] revoir le design de la partie login
+- [ ] implementer les fonctions pour créer son cercle familial et inviter les membres
 
 ### backlog by Bard
 for more see the discussion folder
