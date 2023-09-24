@@ -11,9 +11,13 @@ This template should help get you started developing with Vue 3 in Vite.
 vos données sont stockées et sécurisées sur Firebase en Belgique
 
 ## firebase auth
+https://firebase.google.com/docs/auth/web/start?hl=fr
 https://firebase.google.com/docs/auth/where-to-start?authuser=0&hl=fr
 https://firebase.google.com/docs/auth/web/firebaseui?authuser=0&hl=fr
 https://github.com/firebase/firebaseui-web
+
+# utilisateurs
+https://console.firebase.google.com/project/kompoz/authentication/users
 
 
 ## Customize configuration

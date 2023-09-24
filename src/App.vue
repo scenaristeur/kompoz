@@ -27,6 +27,7 @@ import BddFirebase from './views/BddFirebase.vue'
         <RouterLink to="/forum">Forum</RouterLink>
         <RouterLink to="/newsletter">Recevoir les informations</RouterLink>
         <RouterLink to="/about">A propos</RouterLink>
+        <RouterLink to="/profile">Mon profile</RouterLink>
         <br><br>
         <hr>
         <br>
@@ -51,6 +52,7 @@ import BddFirebase from './views/BddFirebase.vue'
 
   <RouterView />
 </template>
+
 
 <style scoped>
 header {
