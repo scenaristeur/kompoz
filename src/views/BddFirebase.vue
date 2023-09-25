@@ -130,6 +130,7 @@ export default {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/auth.user
         const uid = user.uid;
+        console.log("uid",uid)
         this.user = user
         this.$router.push('/profile')
         // ...
@@ -206,7 +207,7 @@ export default {
           const token = credential.accessToken;
           // The signed-in user info.
           let user = result.user;
-          console.log(user)
+          console.log(user, token)
           // IdP data available using getAdditionalUserInfo(result)
           // ...
         }).catch((error) => {
@@ -217,9 +218,10 @@ export default {
          // const email = error.customData.email;
           // The AuthCredential type that was used.
           const credential = GoogleAuthProvider.credentialFromError(error);
+          console.log(credential)
           this.user = null
           alert(error)
-          console.log(error)
+          console.log(error, errorCode, errorMessage)
           // ...
         });
     },
@@ -229,8 +231,8 @@ export default {
         this.user = null
       }).catch((error) => {
         // An error happened.
-        alert(err)
-        console.log(err)
+        alert(error)
+        console.log(error)
       });
     },
 
