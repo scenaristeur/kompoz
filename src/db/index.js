@@ -1,8 +1,8 @@
 import { initializeApp } from 'firebase/app'
 
-import { getDatabase, onValue, ref, set} from 'firebase/database'
+import { getDatabase, onValue, ref, set } from 'firebase/database'
 
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid'
 
 // // AUTH https://firebase.google.com/docs/reference/js/?hl=fr&authuser=0&_gl=1*10jfmwh*_ga*NTY2NDEwNzc4LjE2OTU1Njg1Njk.*_ga_CW55HF8NVT*MTY5NTU2ODU2OC4xLjEuMTY5NTU2ODg5MS4wLjAuMA..
 // // AUTH https://firebase.google.com/docs/auth/web/start?hl=fr
@@ -13,7 +13,7 @@ import {
   //   onAuthStateChanged,
   GoogleAuthProvider,
   signInWithPopup,
-   signOut
+  signOut
 } from 'firebase/auth'
 
 const firebaseConfig = {
@@ -46,22 +46,36 @@ export default class User {
     console.log('db', db)
   }
 
-  createMember(member){
+  createMember(member) {
     // eslint-disable-next-line no-undef
     let userId = uuidv4()
-    const reference = ref(this.db, "members/" +userId)
+    const reference = ref(this.db, 'members/' + userId)
     set(reference, member)
   }
 
-  getMembers(cb){
+  getMembers(cb) {
     const membersRef = ref(this.db, 'members/')
-    onValue(membersRef, (snapshot)=>{
-        const data = snapshot.val()
-        console.log(data)
-        cb(data)
+    onValue(membersRef, (snapshot) => {
+      const data = snapshot.val()
+      console.log(data)
+      cb(data)
     })
-  
+  }
 
+  createGroup(group) {
+    // eslint-disable-next-line no-undef
+    let userId = uuidv4()
+    const reference = ref(this.db, 'groups/' + userId)
+    set(reference, group)
+  }
+
+  getGroups(cb) {
+    const groupsRef = ref(this.db, 'groups/')
+    onValue(groupsRef, (snapshot) => {
+      const data = snapshot.val()
+      console.log(data)
+      cb(data)
+    })
   }
 
   connectPopup() {
@@ -96,14 +110,16 @@ export default class User {
     //return res
   }
 
-  deconnect(){
-       signOut(this.auth).then(() => {
+  deconnect() {
+    signOut(this.auth)
+      .then(() => {
         // Sign-out successful.
         this.user = null
-      }).catch((error) => {
+      })
+      .catch((error) => {
         // An error happened.
         alert(error)
         console.log(error)
-      });
+      })
   }
 }

@@ -22,7 +22,7 @@
       </template>
       <template #heading>Ma Famille</template>
 
-      <input placeholder="nom de famille ou de groupe" />
+      <input placeholder="nom de famille ou de groupe" v-model="group.name" />
       <button @click="createGroup">Create Group</button>
       <hr>
       <input placeholder="username" v-model="member.username" />
@@ -36,7 +36,16 @@
       <button @click="getMembers">Get members</button>
 
 
+      <h1>GROUPS</h1>
+      <ul v-if="groups != null">
+        <li v-for="[k, v] in Object.entries(groups) " :key="k">
+          {{ v.name }}
+        </li>
+      </ul>
 
+
+
+      <h1>MEMBRES</h1>
       <ul v-if="members != null">
         <li v-for="[k, v] in Object.entries(members) " :key="k">
           {{ v.username }}, {{ v.email }}
@@ -90,11 +99,14 @@ export default {
     return {
       // user: null,
       member: {},
-      members: null
+      members: null,
+      group: {},
+      groups: null
     }
   },
   created() {
     this.getMembers()
+    this.getGroups()
     // const auth = getAuth();
     // this.user = auth.currentUser;
 
@@ -122,6 +134,20 @@ export default {
     updateMembers(members) {
       console.log("UPDATING MEMBERS", members)
       this.members = members
+    },
+    createGroup() {
+      this.group.creator = this.user.uid
+      this.group.created = Date.now()
+      fb.createGroup(this.group)
+      this.group = {}
+      this.getGroups()
+    },
+    getGroups() {
+      fb.getGroups(this.updateGroups)
+    },
+    updateGroups(groups) {
+      console.log("UPDATING GRoups", groups)
+      this.groups = groups
     }
   },
   computed: {
