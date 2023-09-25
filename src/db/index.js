@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app'
 
-import { getDatabase, ref, set} from 'firebase/database'
+import { getDatabase, onValue, ref, set} from 'firebase/database'
 
 import { v4 as uuidv4 } from 'uuid';
 
@@ -51,6 +51,16 @@ export default class User {
     let userId = uuidv4()
     const reference = ref(this.db, "members/" +userId)
     set(reference, member)
+  }
+
+  getMembers(cb){
+    const membersRef = ref(this.db, 'members/')
+    onValue(membersRef, (snapshot)=>{
+        const data = snapshot.val()
+        console.log(data)
+        cb(data)
+    })
+  
 
   }
 

@@ -30,12 +30,16 @@
       <input placeholder="profile_picture" v-model="member.profile_picture" />
       <button @click="createMember">Creér un membre de la famille</button>
       <br>
-      <RouterLink to="/">memberr les membres de ma famille</RouterLink>
+      <RouterLink to="/">inviter membre les membres de ma famille</RouterLink>
 
 
-      <ul>
-        <li>
-          - membre 1 Mère :/ Maman / Anna , status invitée
+      <button @click="getMembers">Get members</button>
+
+
+
+      <ul v-if="members != null">
+        <li v-for="[k, v] in Object.entries(members) " :key="k">
+          {{ v.username }}, {{ v.email }}
         </li>
         <li>
           - membre 2 Père / Papa / Bob, status : Moi
@@ -85,10 +89,12 @@ export default {
   data() {
     return {
       // user: null,
-      member: {}
+      member: {},
+      members: null
     }
   },
   created() {
+    this.getMembers()
     // const auth = getAuth();
     // this.user = auth.currentUser;
 
@@ -105,8 +111,17 @@ export default {
   methods: {
     createMember() {
       this.member.creator = this.user.uid
-      this.member.cretaed = Date.now()
+      this.member.created = Date.now()
       fb.createMember(this.member)
+      this.member = {}
+      this.getMembers()
+    },
+    getMembers() {
+      fb.getMembers(this.updateMembers)
+    },
+    updateMembers(members) {
+      console.log("UPDATING MEMBERS", members)
+      this.members = members
     }
   },
   computed: {
