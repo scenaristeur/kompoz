@@ -1,4 +1,5 @@
 import { fileURLToPath, URL } from 'node:url'
+// eslint-disable-next-line no-undef
 const base = process.env.NODE_ENV === 'production' ? '/kompoz/' : '/'
 
 
