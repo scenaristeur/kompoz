@@ -5,6 +5,11 @@
 - [ ] ajouter les membres de sa famille à son profil (son cercle holacratie)
 - [ ] revoir le design de la partie login
 - [ ] implementer les fonctions pour créer son cercle familial et inviter les membres
+- [ ] créer des groupes
+https://www.youtube.com/watch?v=pP7quzFmWBY 
+ https://www.youtube.com/watch?v=vy8jn-9yyt4
+
+
 
 ### backlog by Bard
 for more see the discussion folder
