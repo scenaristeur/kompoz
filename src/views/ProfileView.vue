@@ -5,6 +5,7 @@
         <DocumentationIcon />
       </template>
       <template #heading>Profile View</template>
+      <!-- {{  user  }} -->
       Name : {{ user.displayName }}
       <br>
       Email : {{ user.email }}
@@ -20,7 +21,15 @@
       </template>
       <template #heading>Ma Famille</template>
 
-      <RouterLink to="/">Inviter les membres de ma famille</RouterLink>
+      <input placeholder="nom de famille ou de groupe" />
+      <button @click="createGroup">Create Group</button>
+      <hr>
+      <input placeholder="username" v-model="member.username" />
+      <input placeholder="email" v-model="member.email" />
+      <input placeholder="profile_picture" v-model="member.profile_picture" />
+      <button @click="createMember">Creér un membre de la famille</button>
+      <br>
+      <RouterLink to="/">memberr les membres de ma famille</RouterLink>
 
 
       <ul>
@@ -59,31 +68,51 @@ import ToolingIcon from '@/components/icons/IconTooling.vue'
 
 </script>
 <script>
-import { getAuth } from "firebase/auth";
+// import { getAuth } from "firebase/auth";
+// import firebaseui from 'firebaseui';
+// Importing User
+import FB from '../db';
 
+// Creating new user object
+var fb = new FB();
+
+// Printing data
+console.log(fb);
 export default {
   name: "ProfileView",
 
   data() {
     return {
-      user: null
+     // user: null,
+      member: {}
     }
   },
   created() {
-    const auth = getAuth();
-    this.user = auth.currentUser;
+    // const auth = getAuth();
+    // this.user = auth.currentUser;
 
-    if (this.user) {
-      console.log("OK", this.user)
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/auth.user
-      // ...
-    } else {
-      this.$router.push('/')
-      // No user is signed in.
+    // if (this.user) {
+    //   console.log("OK", this.user)
+    //   // User is signed in, see docs for a list of available properties
+    //   // https://firebase.google.com/docs/reference/js/auth.user
+    //   // ...
+    // } else {
+    //   this.$router.push('/')
+    //   // No user is signed in.
+    // }
+  },
+  methods:{
+    createMember(){
+ 
+      fb.createMember(this.member)
     }
-  }
+  },
+  computed: {
+    user() {
+      return this.$store.state.user
+    },
 
+}
 }
 
 

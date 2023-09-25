@@ -1,6 +1,8 @@
 import { initializeApp } from 'firebase/app'
 
-import { getDatabase /*ref, set*/ } from 'firebase/database'
+import { getDatabase, ref, set} from 'firebase/database'
+
+import { v4 as uuidv4 } from 'uuid';
 
 // // AUTH https://firebase.google.com/docs/reference/js/?hl=fr&authuser=0&_gl=1*10jfmwh*_ga*NTY2NDEwNzc4LjE2OTU1Njg1Njk.*_ga_CW55HF8NVT*MTY5NTU2ODU2OC4xLjEuMTY5NTU2ODg5MS4wLjAuMA..
 // // AUTH https://firebase.google.com/docs/auth/web/start?hl=fr
@@ -42,6 +44,14 @@ export default class User {
     console.log('constructor of FB class called: ')
     console.log('app', app)
     console.log('db', db)
+  }
+
+  createMember(member){
+    // eslint-disable-next-line no-undef
+    let userId = uuidv4()
+    const reference = ref(this.db, "members/" +userId)
+    set(reference, member)
+
   }
 
   connectPopup() {

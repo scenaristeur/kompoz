@@ -129,12 +129,14 @@ export default {
         console.log("uid", uid)
         this.user = user
         this.$router.push('/profile')
+        this.$store.commit('setUser', user)
 
         // ...
       } else {
         this.user = user
         console.log("user",user)
         this.$router.push('/')
+        this.$store.commit('setUser', null)
         // User is signed out
         // ...
       }
