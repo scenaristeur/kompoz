@@ -6,6 +6,7 @@
       </template>
       <template #heading>Profile View</template>
       <!-- {{  user  }} -->
+      Uid : {{ user.uid }}<br>
       Name : {{ user.displayName }}
       <br>
       Email : {{ user.email }}
@@ -83,7 +84,7 @@ export default {
 
   data() {
     return {
-     // user: null,
+      // user: null,
       member: {}
     }
   },
@@ -101,9 +102,10 @@ export default {
     //   // No user is signed in.
     // }
   },
-  methods:{
-    createMember(){
- 
+  methods: {
+    createMember() {
+      this.member.creator = this.user.uid
+      this.member.cretaed = Date.now()
       fb.createMember(this.member)
     }
   },
@@ -112,7 +114,7 @@ export default {
       return this.$store.state.user
     },
 
-}
+  }
 }
 
 
