@@ -25,9 +25,9 @@ import BddFirebase from './views/BddFirebase.vue'
         <RouterLink to="/ressources">Ressources</RouterLink>
         <RouterLink to="/temoignages">Temoignages</RouterLink>
         <RouterLink to="/forum">Forum</RouterLink>
-        <RouterLink to="/newsletter">Recevoir les informations</RouterLink>
+        <RouterLink to="/">Recevoir les informations</RouterLink>
         <RouterLink to="/about">A propos</RouterLink>
-        <RouterLink to="/profile">Mon profile</RouterLink>
+        <RouterLink to="/profile">Mon profil</RouterLink>
         <br><br>
         <hr>
         <br>
@@ -35,13 +35,13 @@ import BddFirebase from './views/BddFirebase.vue'
 
         <!-- <h3>Telécharger Kompoz Mobile</h3> -->
         <!-- <p>Téléchargez l'application Kompoz dès aujourd'hui et commencez votre nouveau départ.</p> -->
-        <button><a href="lien_de_telechargement">Télécharger Kompoz</a></button>
+        <!-- <button><a href="lien_de_telechargement">Télécharger Kompoz</a></button> -->
 
         <!-- <h3>Inscription</h3> -->
         <!-- <p>Téléchargez l'application Kompoz dès aujourd'hui et commencez votre nouveau départ.</p> -->
-        <button>
+        <!-- <button>
           <RouterLink to="/login">Connexion</RouterLink>
-        </button>
+        </button> -->
 
         <BddFirebase />
 

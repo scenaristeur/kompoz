@@ -20,7 +20,7 @@
       </template>
       <template #heading>Ma Famille</template>
 
-      <RouterLink to="/inviter">Inviter les membres de ma famille</RouterLink>
+      <RouterLink to="/">Inviter les membres de ma famille</RouterLink>
 
 
       <ul>
