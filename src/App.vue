@@ -51,6 +51,15 @@ import BddFirebase from './views/BddFirebase.vue'
   </header>
 
   <RouterView />
+  <div class="footer">
+
+    <h3>Sites partenaires</h3>
+<a href="/" target="_blank">Prêt d'argent</a> |
+<a href="/" target="_blank">Recyclage, Récupération</a>
+
+
+
+</div>
 </template>
 
 
