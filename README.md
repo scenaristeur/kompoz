@@ -14,7 +14,12 @@ https://www.youtube.com/watch?v=pP7quzFmWBY
 ### backlog by Bard
 for more see the discussion folder
 
+# video chat
+- https://www.youtube.com/watch?v=DvlyzDZDEq4
+- https://webrtc.org/?hl=fr
+- https://medium.com/spidernitt/building-a-video-chat-app-with-webrtc-firebase-8546edb860d5
 
+http://localhost:5173/videochat.html
 
 
 salut, je souhaite créer une application permettant d'aider les couples à se séparer sans se déchirer. Je suis moi même divorcé, ça s'est mal passé, et j'en paie encore les conséquences. Aujourd'hui, je sens que l'un de mes collègues est dans une situation proche de la rupture,  et que ça serait peut-être bien pour lui, sa femme avec qui il ne semble pas heureux et leur filles. Peux-tu étendre le concept de cette application, et le généraliser, Dans l'idéal, chaque famille, (et leur proches éventuellement plus tard) possède un espace, workspace, j'envisageait de gérer ça comme un cercle en holacratie, avec les actions et les conseils de coachs, et de coachs numériques implémentés à base d'intelligence artificielle. Peux-tu m'écrire les userstory, les specs, le product-backlog ?
@@ -82,6 +87,21 @@ https://github.com/firebase/firebaseui-web
 
 # utilisateurs
 https://console.firebase.google.com/project/kompoz/authentication/users
+
+
+# LLM, large Language Model, IA
+- https://24pm.com/intelligence-artificielle/ia-generative/965-les-llms-open-source-alternatifs-a-chatgpt-gpt
+
+# Together.ai
+- https://docs.together.ai/docs/inference-rest
+
+curl -X POST "$ENDPOINT_URL" \
+     -H "Authorization: Bearer $API_KEY" \
+     -H "Content-Type: application/json" \
+     -d '{"model": "togethercomputer/RedPajama-INCITE-7B-Instruct", "prompt": "The capital of France is ", "temperature": 0.8, "top_p": 0.7, "top_k": 50, "max_tokens": 1}'
+
+
+
 
 
 ## Customize configuration

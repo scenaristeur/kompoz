@@ -26,3 +26,5 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+
+main_video_chat.js
